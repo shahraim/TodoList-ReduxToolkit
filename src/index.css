@@ -1,0 +1,25 @@
+@import url("https://fonts.googleapis.com/css2?family=Croissant+One&family=Luckiest+Guy&family=Merriweather:ital,wght@0,700;1,400&family=Poppins:ital,wght@0,500;0,600;0,700;1,200&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body{
+  font-family: Poppins ,sans-serif;
+}
+.App {
+  background-color: #f8f8ff;
+  height: 100vh;
+  overflow: hidden;
+}
+.App>p {
+  color: #646681;
+  display: inline-block;
+  font-family: Poppins;
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin: 1.5rem auto 1.5rem;
+  text-align: center;
+  text-transform: uppercase;
+  width: 100%;
+}

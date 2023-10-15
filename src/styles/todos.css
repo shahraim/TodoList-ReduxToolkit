@@ -1,0 +1,124 @@
+.todos {
+  margin: 0 auto;
+  max-width: 750px;
+  width: 100%;
+  padding: 0 10px;
+}
+.buttonArea {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 0 10px 0;
+}
+.buttonArea button {
+  border: none;
+  border-radius: 6px;
+  background-color: #646ff0;
+  color: white;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 12px 18px;
+}
+.buttonArea select {
+  background-color: #cccdde;
+  border-radius: 6px;
+  border: none;
+  color: #585858;
+  cursor: pointer;
+  font-size: 17px;
+  font-weight: 500;
+  padding: 8px 10px;
+  font-family: Poppins;
+}
+.todoArea {
+  background-color: #ecedf6;
+  border-radius: 12px;
+  overflow-y: scroll !important;
+  height: 72vh;
+  padding: 1.2rem 1.2rem 0.3rem 1.2rem;
+}
+.todoArea .todoList {
+  align-items: center;
+  background: white;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+  padding: 0.7rem;
+}
+
+.todoArea .todoList .title {
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
+  width: 70%;
+}
+/* .todoList:nth-child(odd) {
+  background-color: #646681;
+  .title p {
+    color: rgb(250, 247, 247) !important;
+  }
+} */
+.todoArea .todoList .title p {
+  margin: 0;
+  font-size: 15px;
+  color: #585858;
+  font-weight: 500;
+  text-transform: capitalize;
+}
+
+.title p:nth-child(2){
+  /* background-color: #646ff0; */
+  color: #c7c7cf !important;
+  font-size: 11px !important;
+}
+
+.buttons p {
+  padding: 0;
+  margin: 0;
+  text-align: center;
+  margin-top: -10px;
+  font-size: 10px;
+  color: #c0c1ce;
+  /* line-height: px; */
+}
+.todoArea .todoList .buttons button {
+  font-size: 18px;
+  color: #585858;
+  margin-left: 5px;
+  border: none;
+  border-radius: 4px;
+  /* color: #585858; */
+  color: rgb(247, 30, 30);
+  cursor: pointer;
+  padding: 0.3rem 0.5rem;
+  transition: background-color 0.3s ease;
+  background-color: #eee;
+  &:hover {
+    background-color: #e4dada;
+  }
+}
+.todoArea .todoList .buttons button:nth-child(3) {
+  color: rgb(100, 102, 248);
+}
+
+.noTodo {
+  display: flex;
+  background-color: #ecedf6;
+  border-radius: 12px;
+  padding: 1.2rem 1.2rem 0.3rem 1.2rem;
+  justify-content: center;
+  align-items: center;
+}
+.noTodo p {
+  background-color: #fff;
+  padding: 0.4rem 0.9rem;
+  border-radius: 10px;
+  color: #585858;
+}
+/* .close{
+  color: red;
+}
+.complete{
+  color: green;
+} */

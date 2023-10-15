@@ -1,0 +1,22 @@
+.modalTitle {
+    color: #646681;
+  font-size: 1.5rem;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+.formBody label {
+  color: #646681;
+  font-size: 1.1rem;
+}
+.formBody input,
+.formBody select {
+  background-color: #fff;
+  border: none;
+  color: #585858;
+  font-size: 1rem;
+  margin-bottom: 2rem;
+  /* text-transform: capitalize; */
+  margin-top: 0.5rem;
+  padding: 0.8rem;
+  width: 100%;
+}
