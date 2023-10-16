@@ -4,7 +4,10 @@ import Todo from "./components/Todo";
 const App = () => {
   return (
     <div className="App">
-      <p>Todo List </p>
+      <div className="mainName">
+      <span>Todo List </span>
+      <span>Todo List </span>
+      </div>
       <Todo />
     </div>
   );
