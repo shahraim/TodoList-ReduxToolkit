@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { format } from "date-fns";
 import Button from "react-bootstrap/Button";
 import { MdDelete, MdEdit } from "react-icons/md";
@@ -11,6 +11,7 @@ function Todo() {
   const [modalShow, setModalShow] = React.useState(false);
   const [editTodoElement, setEditTodoElement] = React.useState(null);
   const todoData = useSelector((state) => state.todo);
+  const [filter, setFilter] = useState("all");
   const dispatch = useDispatch();
   React.useEffect(() => {
     // console.log(todoData);
@@ -26,7 +27,11 @@ function Todo() {
         <Button variant="primary" onClick={() => setModalShow(true)}>
           Create
         </Button>
-        <select id="status">
+        <select
+          id="status"
+          value={filter}
+          onChange={(e) => setFilter(e.target.value)}
+        >
           <option value="all">All</option>
           <option value="incomplete">Incomplete</option>
           <option value="complete">Completed</option>
@@ -34,33 +39,40 @@ function Todo() {
       </div>
       {todoData.length > 0 ? (
         <div className="todoArea">
-          {todoData.map((element) => (
-            <div className="todoList" key={element.id}>
-              <div className="title">
-                <p>{element.title}</p>
-                <p>{format(new Date(element.time), "p, MM/dd/yyyy")}</p>
-              </div>
+          {todoData
+            .filter((element) => {
+              if (filter === "all") return true;
+              return filter === "complete"
+                ? element.status === "completed"
+                : element.status === "incomplete";
+            })
+            .map((element) => (
+              <div className="todoList" key={element.id}>
+                <div className="title">
+                  <p>{element.title}</p>
+                  <p>{format(new Date(element.time), "p, MM/dd/yyyy")}</p>
+                </div>
 
-              <div className="buttons">
-                <p>
-                  {element.status === "incomplete"
-                    ? "inCompleted"
-                    : "Completed"}
-                </p>
-                <button onClick={() => deleteTodo(element.id)}>
-                  <MdDelete className="delete" />
-                </button>
-                <button
-                  onClick={() => {
-                    setModalShow(true);
-                    setEditTodoElement(element);
-                  }}
-                >
-                  <MdEdit className="edit" />
-                </button>
+                <div className="buttons">
+                  <p>
+                    {element.status === "incomplete"
+                      ? "inCompleted"
+                      : "Completed"}
+                  </p>
+                  <button onClick={() => deleteTodo(element.id)}>
+                    <MdDelete className="delete" />
+                  </button>
+                  <button
+                    onClick={() => {
+                      setModalShow(true);
+                      setEditTodoElement(element);
+                    }}
+                  >
+                    <MdEdit className="edit" />
+                  </button>
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
         </div>
       ) : (
         <div className="noTodo">
